@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+
+\author{Arthur Allshire}
+\title{A Programmer's Introduction to Mathematics: Chapter 2 Exercise solutions}
+\begin{document}
+\maketitle
+
+\section*{2.6: Prove Vieta's Formulas}
+{\it Exercise.} Let $f(x) = a_0 + a_1x + ... + a_nx^n$ be a degree $n$ polynomial, and suppose
+it has $k$ real roots $r_1, ..., r_n$. Prove Vieta's Formulas, which are
+
+\[
+\begin{aligned}
+\displaystyle\sum_{i=1}^{n} r_i = -\frac{a_{n-1}}{a_n}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\displaystyle\prod_{i=1}^{n} r_i = (-1)^n \frac{a_0}{a_n}.
+\end{aligned}
+\]
+
+\begin{proof}
+
+Let $g(x) = \frac{f(x)}{a_n} = \frac{a_0}{a_n} + \frac{a_1}{a_n}x + ... + x^n$.
+Now, given roots of $g(x)$ are $r_1,...,r_n$, the monic polynomial
+
+\[
+\begin{aligned}
+g(x) = \displaystyle\prod_{i=1}^{n} x_i - r_i = \displaystyle\sum_{i=0}^{n} \frac{a_i}{a_n} x_i
+\end{aligned}
+\]
+Now, \href{https://en.wikipedia.org/wiki/Equating_coefficients}{equating the coefficients}
+of $a^n-1$ an both sides (observe the expansion of the product on the left hand side resulting in
+the multiplication of $r_i$ by $x$ $n-1$ times), we get
+\[
+\begin{aligned}
+\displaystyle\sum_{i=1}^{n} r_i = -\frac{a_{n-1}}{a_n}
+\end{aligned},
+\]as required.
+Similarly, we simply observe equate the constant term (the "coefficient of $x^0$") on both sides,
+observing that on the left hand side this is the product of the roots multiplied by $(-1)^n$, and
+divide through by $(-1)^n$ to obtain the second equation.
+
+\end{proof}
+
+\end{document}
