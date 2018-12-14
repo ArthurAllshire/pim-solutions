@@ -1,0 +1,61 @@
+\documentclass{article}
+% for general math stuff
+\usepackage{amsmath}
+% for proof
+\usepackage{amsthm}
+% for number set symbols
+\usepackage{amsfonts}
+% for links
+\usepackage{hyperref}
+
+\author{Arthur Allshire}
+\title{A Programmer's Introduction to Mathematics: Chapter 4 Exercise solutions}
+\begin{document}
+\maketitle
+
+\section*{4.2: Prove De Morgan's Law}
+{\it Exercise.} Prove De Morgan's law for sets, which for $A, B \subset X$
+states that $(A \cap B)^{C} = A^{C} \cup B^{C}$, and
+$(A \cup B)^{C} = A^{C} \cap B^{C}$.
+
+\begin{proof}
+
+\[
+\begin{aligned}
+    (A \cap B)^{C} &= \{x : x \in A \:\text{and}\: x \in B\}^{C} \\
+             &= \{x : x \not\in A \:\text{or}\: x \not\in B\} \\
+             &= \{x : x \not\in A\} \cup \{x: x \not\in B\} \\
+             &= \{x : x \in A\}^C \cup \{x: x \in B\}^C \\
+             &= A^C \cup B^C \\
+\\
+    (A \cup B)^{C} &= \{x : x \in A \:\text{or}\: x \in B\}^{C} \\
+             &= \{x : x \not\in A \:\text{and}\: x \not\in B\} \\
+             &= \{x : x \not\in A\} \cap \{x:  x \not\in B\} \\
+             &= A^C \cap B^C \\
+\end{aligned}
+\]
+
+\end{proof}
+
+\section*{4.5: Prove that $\mathbb{N}\times\mathbb{N}$ is countable}
+
+{\it Solution} I had to look this solution up.
+\href{https://math.stackexchange.com/questions/91665/proving-mathbbnk-is-countable/91678#91678}{This solution}
+is a fairly straightforward method to approach this problem.
+
+\section*{4.6: Union of Countable Sets}
+{\it Exercise.} Suppose for each $n \in \mathbb{N}$ we picked a countable set $A_n$. Prove that
+the union of all the $A_n$ is countable. Hint: use the previous problem and write the elements of all the
+$A_n$ in a grid.
+
+\begin{proof}
+
+    Let $X = A_1 \cup A_2 \cup A_3 \cup ...$. To prove that $X$ is countable we show that there must exist
+    a surjection $\mathbb{N} \rightarrow X$. Define a surjective map $g: \mathbb{N} \rightarrow \mathbb{N}^2$.
+    From Ex. 4.5, we know such a map must exist. Define $X_{(i, j)}$ as the $j$-th element from the
+    $i$-th set which made up X. Now, define $f: \mathbb{N} \rightarrow X$ as $f(x) = X_{g(x)}$,
+    which is clearly a surjection (as $g(x)$ is).
+    Thus, since the surjection $f: \mathbb{N} \rightarrow X$ exists, $X$ is countable.
+\end{proof}
+
+\end{document}
