@@ -43,11 +43,11 @@ The problem thus boils down to showing that the limit of a sum is the same as th
 and that multiplication by a constant inside and outside a limit is equivalent.
 
 To prove the first part, we go back to the definitions of convergance and limits. Let
-$x_1, x_2, x_3, ...$ be aany sequence converging on $c \in \mathbb{R}$.
+$x_1, x_2, x_3, ...$ be any sequence converging on $c \in \mathbb{R}$.
 Let $f(x_n) \rightarrow L$ and $g(x_n) \rightarrow M$ for any sequence $x_n \rightarrow c$.
 By the definition of convergence,
-$\forall \delta > 0, \exists m \in \mathbb{N}$ such that both
-$\abs{f(x_m) - L} < \delta$ and $\abs{g(x_m) - M} < \delta$.
+$\forall \delta > 0, \exists k \in \mathbb{N}$ such that both
+$\abs{f(x_n) - L} < \delta$ and $\abs{g(x_n) - M} < \delta$ for each $n>k$.
 We now construct the series $f(x_1)+g(x_1), f(x_2)+g(x_2), f(x_3)+g(x_3), ...$.
 Adding the two previous equations,
 
@@ -64,8 +64,24 @@ $f(x_n)+g(x_n) \rightarrow L+M$. So,
     \lim_{x \to c} f(x) + g(x) &= L+M \\
     &= \lim_{x \to c} f(x) + \lim_{x \to c} g(x) \\
 \end{aligned}
-
 \]
+Similarly, let $x_n$ be a sequence such that $x_n \rightarrow c$, and
+$f(x)$ be a function such that the series $f(x_n) \rightarrow L$,
+for every series $x_n$. Thus there is a value $k \in \mathbb{N}$
+such that $\abs{f(x_n)-L} < \delta, \forall \delta > 0$ for each
+$n > k$.
+Let $af(x_1), af(x_2), ...$ be another sequence. Multiplying the
+previous expression by some $a \in \mathbb{R}$,
+\[
+\begin{aligned}
+    a\abs{f(x_n)-L} &< a\delta \\
+    \abs{af(x_n)-aL} &< \epsilon \text{, where } \epsilon = a\delta \\
+\end{aligned}
+\]
+Since $\delta$ may be any real number greater than 0, so must $\epsilon$,
+and hence the limit of $af(x_n)$ is $aL$. This implies that
+$\lim_{x \to c} af(x) = a\lim_{x \to c} f(x)$, as desired,
+thus completing the proof.
 
 \end{proof}
 
