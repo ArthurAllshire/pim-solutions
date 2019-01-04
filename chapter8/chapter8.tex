@@ -106,4 +106,21 @@ If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$, then for all series 
 \]
 \end{proof}
 
+\section*{8.2.3: Proving divergence}
+\begin{exercise}
+Prove that $a_n = \frac{2^{\sqrt{n}}}{n^{10}}$ diverges.
+\end{exercise}
+
+See \href{https://github.com/pim-book/exercises/issues/4}{Discussion of this proof here} (that was a link - you may need to download this PDF to click as it doesn't render properly on GH.)
+\begin{proof}
+As $\frac{\mathrm{d}}{\mathrm{d}x}(\log_2 x) = \frac{1}{x} > 0,\forall x > 0$, we know $\log_2 x$ is an increasing function. Hence $b_n = \log_2 a_n$ diverges if and only if $a_n$ diverges.
+
+We know that $b_n = \log_2 \frac{2^{\sqrt{n}}}{n^{10}} = \sqrt{n} - 10 \log_2 n$.
+Since
+\[
+\frac{\mathrm{d}}{\mathrm{d}n} \sqrt{n} = \frac{1}{2 \sqrt{n} } > 10 \frac{10}{\ln 2} \frac{1}{n} = \frac{\mathrm{d}}{\mathrm{d}n} 10 \log_2 n
+\]
+for a sufficiently large n, and since $\lim_{x \to \infty} \sqrt{n} = \infty$ and $\lim_{x \to \infty} 10 \log_2{n} = \infty$, we conclude that $b_n$ diverges and thus so does $a_n$.
+\end{proof}
+
 \end{document}
