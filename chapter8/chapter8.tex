@@ -85,4 +85,25 @@ thus completing the proof.
 
 \end{proof}
 
+\section*{8.2.2: Product of limits}
+\begin{exercise}
+    Using the definition of the limit of a function, prove that:
+    \[
+        \lim_{x \to a}[f(x)g(x)] = (\lim_{x \to a}f(x)(\lim_{x \to a} g(x))
+    \]
+\end{exercise}
+
+\begin{proof}
+Let $a_1, a_2,...$ be a series converging on L, and $b_1, b_2,...$ be a series converging on M. For every threshold $\epsilon > 0$ there is a $k \in \mathbb{N}$ such that all the $a_n$ after $a_k$, and all of the $b_n$ after $b_k$ are within $\epsilon$ of $L$
+
+We now construct the series $a_1b_1,a_2b_2,...$. To prove it converges on $LM$ we must show that $\abs{a_nb_n - LM} < \delta$ for all $\delta > 0$ Clearly now for all $n>k$, the term $a_nb_n$ is within $(L+\epsilon)(M+\epsilon)$ of $LM$. Letting $\delta = \epsilon^2+\epsilon(L+M)$, we then obtain (by the expansion of the previous binomial) $\abs{a_nb_n - LM} < \delta$. Since $\epsilon$ may be any real number greater than 0, so must $\delta$ and hence the series converges on $LM$.
+
+If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$, then for all series $x_n \rightarrow c$, $f(x_n) \rightarrow L$ and $g(x_n) \rightarrow M$, and thus using the above $f(x_n)g(x_n) \rightarrow LM$, and so
+\[
+\begin{aligned}
+\lim_{x \to c} f(x)g(x) = (\lim_{x \to c} f(x))(\lim_{x \to c} g(x))
+\end{aligned}
+\]
+\end{proof}
+
 \end{document}
