@@ -127,8 +127,11 @@ Let
 \]
 \end{proof}
 
-\begin{proof}
+Using this, we may fairly simply complete the proof.
 
+\begin{proof}
+By definiton, $g(f(x)) = M(g \circ f)x$. We also know that $f(x) = M(f)x$ Thus, $g(f(x)) = g(M(f)x) = M(g)(M(f)x) = (M(g)M(f))x$ (using the lemma)
+and hence the function composition in matrix form $M(g \circ f) = M(g)M(f)$.
 \end{proof}
 
 \end{document}
