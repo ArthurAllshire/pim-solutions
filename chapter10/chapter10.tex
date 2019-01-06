@@ -130,8 +130,33 @@ Let
 Using this, we may fairly simply complete the proof.
 
 \begin{proof}
-By definiton, $g(f(x)) = M(g \circ f)x$. We also know that $f(x) = M(f)x$ Thus, $g(f(x)) = g(M(f)x) = M(g)(M(f)x) = (M(g)M(f))x$ (using the lemma)
+By definition, $g(f(x)) = M(g \circ f)x$. We also know that $f(x) = M(f)x$ Thus, $g(f(x)) = g(M(f)x) = M(g)(M(f)x) = (M(g)M(f))x$ (using the lemma)
 and hence the function composition in matrix form $M(g \circ f) = M(g)M(f)$.
+\end{proof}
+
+\section*{Map to matrix preserves inverses}
+
+\begin{exercise}
+	From page 156: Prove that if a linear map is a bijection, then its inverse is also a linear map, and the linear-map-to-matrix correspondence preserves inverses.
+\end{exercise}
+First we prove the linearity of the inverse
+\begin{proof}
+	Let $V, W$ be two vector spaces, and $f: V \mapsto W$ be a linear bijective map.
+	Since $f$ is a bijection, there exists an inverse $f^{-1}: W \mapsto V$.
+	Let $x, y \in V$, and $f(x) = x', \ f(y) = y'$. Let $c$ be a scalar.
+	Now,
+
+\[
+\begin{aligned}
+f(x+y) &= f(x) + f(y) \text{, by linearity of f, } \\
+x + y &= f^{-1}(f(x) + f(y)) \text{, taking the inverse, } \\
+f^{-1}(x') + f^{-1}(y') &= f^{-1}(x' + y') \\
+f(cx) &= cf(x) \text{, by linearity of f} \\
+cx &= f^{-1}(cf(x)) \text{, taking the inverse, and hence } \\
+cf^{-1}(x') &= f^{-1}(cx') \\
+\end{aligned}
+\]
+And hence $f^{-1}$ is linear, as required.
 \end{proof}
 
 \end{document}
